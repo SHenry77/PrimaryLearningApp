@@ -1,7 +1,6 @@
 package com.teainspired.model;
 
 import java.util.Objects;
-import javax.xml.bind.annotation.XmlRootElement;
 
 public class Student implements User, Cloneable {
 

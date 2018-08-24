@@ -21,7 +21,7 @@ public class XMLDOMUserDaoImpl implements UserDAO {
 
     public XMLDOMUserDaoImpl(String xmlFilePath) {
         studentMap = new HashMap<>();
-        supervisorMap = new HashMap<String, Supervisor>();
+        supervisorMap = new HashMap<>();
         readFile(xmlFilePath);
     }
 
@@ -76,7 +76,7 @@ public class XMLDOMUserDaoImpl implements UserDAO {
 
     @Override
     public List<Supervisor> getAllSupervisors() {
-        List<Supervisor> supervisors = new ArrayList<Supervisor>();
+        List<Supervisor> supervisors = new ArrayList<>();
         for(Supervisor s: supervisorMap.values()) {
             supervisors.add(s.clone());
         }

@@ -12,7 +12,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class XMLDOMUserDaoImplSupervisorTest {
-    private final String path = "C:/Users/Douglas/IdeaProjects/PrimaryLearningApp/code/PrimaryLearningWorkhouse/test-resources/xml/";
     private XMLDOMUserDaoImpl noUsersDao;
     private XMLDOMUserDaoImpl usersDao;
     private UsernameComparator usernameComparator = new UsernameComparator();
@@ -20,9 +19,10 @@ class XMLDOMUserDaoImplSupervisorTest {
 
     @BeforeEach
     void setUp() {
+        String path = "C:/Users/Douglas/IdeaProjects/PrimaryLearningApp/code/PrimaryLearningWorkhouse/test-resources/xml/";
         noUsersDao = new XMLDOMUserDaoImpl(path + "noUsers.xml");
         usersDao = new XMLDOMUserDaoImpl(path + "users.xml");
-        defaultSupervisorList = new ArrayList<Supervisor>();
+        defaultSupervisorList = new ArrayList<>();
         defaultSupervisorList.add(new Supervisor("Jean-Luc", "engage"));
         defaultSupervisorList.add(new Supervisor("Worf", "behave"));
     }
