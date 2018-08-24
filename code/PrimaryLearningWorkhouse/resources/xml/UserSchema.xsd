@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- simple types -->
+    <xs:simpleType name="usernameType">
+        <xs:restriction base="xs:normalizedString">
+            <xs:minLength value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="primaryLevel">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="7"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="passwordType">
+        <xs:restriction base="xs:normalizedString">
+            <xs:minLength value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- complexTypes -->
+
+    <xs:complexType name="StudentType">
+        <xs:sequence>
+            <xs:element name="username" type="usernameType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="primaryYear" type="primaryLevel" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SupervisorType">
+        <xs:sequence>
+            <xs:element name="username" type="usernameType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="password" type="passwordType" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="userList">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="student" type="StudentType" maxOccurs="unbounded"/>
+                <xs:element name="supervisor" type="SupervisorType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

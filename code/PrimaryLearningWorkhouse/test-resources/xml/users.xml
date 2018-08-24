@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userlist>
+    <student>
+        <username>Wesley</username>
+        <primaryYear>1</primaryYear>
+    </student>
+    <student>
+        <username>Will</username>
+        <primaryYear>1</primaryYear>
+    </student>
+    <student>
+        <username>Geordie</username>
+        <primaryYear>2</primaryYear>
+    </student>
+    <student>
+        <username>Data</username>
+        <primaryYear>7</primaryYear>
+    </student>
+    <supervisor>
+        <username>Jean-Luc</username>
+        <password>engage</password>
+    </supervisor>
+    <supervisor>
+        <username>Worf</username>
+        <password>behave</password>
+    </supervisor>
+</userlist>

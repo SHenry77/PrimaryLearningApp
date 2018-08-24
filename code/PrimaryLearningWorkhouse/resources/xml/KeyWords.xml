@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <wordList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocaton="WordListsSchema.xsd">
+        <entry>
+            <word>a</word>
+            <keyword>true</keyword>
+        </entry>
+        <entry>
+            <word>about</word>
+            <keyword>true</keyword>
+        </entry>
+        <entry>
+            <word>all</word>
+            <keyword>true</keyword>
+        </entry>
+        <entry>
+            <word>an</word>
+            <keyword>true</keyword>
+        </entry>
+        <entry>
+            <word>and</word>
+            <keyword>true</keyword>
+        </entry>
+        <entry>
+            <word>are</word>
+            <keyword>true</keyword>
+        </entry>
+        <entry>
+            <word>as</word>
+            <keyword>true</keyword>
+        </entry>
+        <entry>
+            <word>asked</word>
+            <keyword>true</keyword>
+        </entry>
+        <entry>
+            <word>at</word>
+            <keyword>true</keyword>
+        </entry>
+        <entry>
+            <word>back</word>
+            <keyword>true</keyword>
+        </entry>
+        <entry>
+            <word>be</word>
+            <keyword>true</keyword>
+        </entry>
+        <entry>
+            <word>big</word>
+            <keyword>true</keyword>
+        </entry>
+        <entry>
+            <word>but</word>
+            <keyword>true</keyword>
+        </entry>
+        <entry>
+            <word>by</word>
+            <keyword>true</keyword>
+        </entry>
+    </wordList>
+</root>
+

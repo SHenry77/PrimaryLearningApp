@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userlist>
+    <student>
+        <username>Ada</username>
+        <primaryYear>5</primaryYear>
+    </student>
+    <student>
+        <username>James</username>
+        <primaryYear>1</primaryYear>
+    </student>
+    <supervisor>
+        <username>Sarah</username>
+        <password>enter</password>
+    </supervisor>
+</userlist>

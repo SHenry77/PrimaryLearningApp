@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- definition of simple types -->
+    <xs:simpleType name="primaryLevel">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="7"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="schoolWeek">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="39"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- definition of complex types -->
+    <xs:complexType name="wordType">
+        <xs:sequence>
+            <xs:element name="word" type="xs:normalizedString"/>
+            <xs:element name="keyword" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="primary" type="primaryLevel" minOccurs="0"/>
+            <xs:element name="week" type="schoolWeek" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="wordListType">
+        <xs:sequence>
+            <xs:element name="entry" type="wordType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="wordList" type="wordListType"/>
+</xs:schema>
