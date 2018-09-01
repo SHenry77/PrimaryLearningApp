@@ -1,7 +1,5 @@
 package com.teainspired.model;
 
-import java.util.Objects;
-
 public class Supervisor implements User, Cloneable {
 
     private String username;
@@ -36,15 +34,18 @@ public class Supervisor implements User, Cloneable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Supervisor that = (Supervisor) o;
-        return Objects.equals(username, that.username) &&
-                Objects.equals(password, that.password);
+
+        if (username != null ? !username.equals(that.username) : that.username != null) return false;
+        return password != null ? password.equals(that.password) : that.password == null;
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(username, password);
+        int result = username != null ? username.hashCode() : 0;
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        return result;
     }
 
     @Override
