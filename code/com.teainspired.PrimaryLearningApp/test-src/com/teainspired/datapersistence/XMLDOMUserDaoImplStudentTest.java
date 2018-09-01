@@ -7,13 +7,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class XMLDOMUserDaoImplStudentTest {
-    private final String path = "C:/Users/Douglas/IdeaProjects/PrimaryLearningApp/code/PrimaryLearningWorkhouse/test-resources/xml/";
     private XMLDOMUserDaoImpl noUsersDao;
     private XMLDOMUserDaoImpl usersDao;
     private UsernameComparator usernameComparator = new UsernameComparator();
@@ -21,9 +19,10 @@ class XMLDOMUserDaoImplStudentTest {
 
     @BeforeEach
     void setUp() {
+        String path = "C:/Users/Douglas/IdeaProjects/PrimaryLearningApp/code/PrimaryLearningWorkhouse/test-resources/xml/";
         noUsersDao = new XMLDOMUserDaoImpl(path + "noUsers.xml");
         usersDao = new XMLDOMUserDaoImpl(path + "users.xml");
-        defaultStudentList = new ArrayList<Student>();
+        defaultStudentList = new ArrayList<>();
         defaultStudentList.add(new Student("Wesley", 1));
         defaultStudentList.add(new Student("Will", 1));
         defaultStudentList.add(new Student("Geordie", 2));
@@ -136,12 +135,12 @@ class XMLDOMUserDaoImplStudentTest {
 
         // check student is missing
         List<Student> actual = usersDao.getAllStudents();
-        List<Student> expected = new ArrayList<Student>();
+        List<Student> expected = new ArrayList<>();
         expected.add(new Student("Wesley", 1));
         expected.add(new Student("Will", 1));
         expected.add(new Student("Geordie", 2));
-        Collections.sort(expected, usernameComparator);
-        Collections.sort(actual, usernameComparator);
+        expected.sort(usernameComparator);
+        actual.sort(usernameComparator);
         assertEquals(expected, actual);
     }
 

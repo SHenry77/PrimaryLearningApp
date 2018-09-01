@@ -5,7 +5,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 
@@ -13,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DOMHelperTest {
 
-    public static final String USER_XML = "C:/Users/Douglas/IdeaProjects/PrimaryLearningApp/code/PrimaryLearningWorkhouse/xml/Users.xml";
+    private static final String USER_XML = "C:/Users/Douglas/IdeaProjects/PrimaryLearningApp/code/PrimaryLearningWorkhouse/xml/Users.xml";
 
     @Test
     void readDocumentThrowsException() {
@@ -21,10 +20,9 @@ class DOMHelperTest {
             assertNotNull(DOMHelper.readDocument(new File(USER_XML)));
         } catch (SAXException e) {
             e.printStackTrace();
-        } catch (ParserConfigurationException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+            fail("Exception Thrown");
         }
 
     }
@@ -39,12 +37,9 @@ class DOMHelperTest {
             assertNull(tag1, "expected to be null");
             String tag2 = DOMHelper.getTagValue("username", element);
             assertEquals("Ada", tag2);
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
+            fail("Exception thrown");
         }
     }
 
@@ -53,12 +48,9 @@ class DOMHelperTest {
         Document document = null;
         try {
             document = DOMHelper.readDocument(new File(USER_XML));
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
+            fail("Exception Thrown");
         }
         final Element element = (Element)document.getElementsByTagName("student").item(0);
         assertThrows(NumberFormatException.class, (()-> DOMHelper.getTagValueAsInt("username", element)));
