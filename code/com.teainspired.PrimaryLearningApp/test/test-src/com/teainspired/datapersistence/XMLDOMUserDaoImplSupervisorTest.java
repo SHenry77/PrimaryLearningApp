@@ -19,9 +19,10 @@ class XMLDOMUserDaoImplSupervisorTest {
 
     @BeforeEach
     void setUp() {
-        String path = "C:/Users/Douglas/IdeaProjects/PrimaryLearningApp/code/PrimaryLearningWorkhouse/test-resources/xml/";
-        noUsersDao = new XMLDOMUserDaoImpl(path + "noUsers.xml");
-        usersDao = new XMLDOMUserDaoImpl(path + "users.xml");
+        String noUsersPath = XMLDOMUserDaoImplSupervisorTest.class.getResource("/xml/noUsers.xml").getPath();
+        String usersPath = XMLDOMUserDaoImplSupervisorTest.class.getResource("/xml/users.xml").getPath();
+        noUsersDao = new XMLDOMUserDaoImpl(noUsersPath);
+        usersDao = new XMLDOMUserDaoImpl(usersPath);
         defaultSupervisorList = new ArrayList<>();
         defaultSupervisorList.add(new Supervisor("Jean-Luc", "engage"));
         defaultSupervisorList.add(new Supervisor("Worf", "behave"));

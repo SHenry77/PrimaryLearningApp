@@ -19,9 +19,10 @@ class XMLDOMUserDaoImplStudentTest {
 
     @BeforeEach
     void setUp() {
-        String path = "C:/Users/Douglas/IdeaProjects/PrimaryLearningApp/code/PrimaryLearningWorkhouse/test-resources/xml/";
-        noUsersDao = new XMLDOMUserDaoImpl(path + "noUsers.xml");
-        usersDao = new XMLDOMUserDaoImpl(path + "users.xml");
+        String noUsersPath = XMLDOMUserDaoImplStudentTest.class.getResource("/xml/noUsers.xml").getPath();
+        String usersPath = XMLDOMUserDaoImplStudentTest.class.getResource("/xml/users.xml").getPath();
+        noUsersDao = new XMLDOMUserDaoImpl(noUsersPath);
+        usersDao = new XMLDOMUserDaoImpl(usersPath);
         defaultStudentList = new ArrayList<>();
         defaultStudentList.add(new Student("Wesley", 1));
         defaultStudentList.add(new Student("Will", 1));

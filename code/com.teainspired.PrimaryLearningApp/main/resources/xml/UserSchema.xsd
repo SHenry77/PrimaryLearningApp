@@ -25,15 +25,15 @@
 
     <xs:complexType name="StudentType">
         <xs:sequence>
-            <xs:element name="username" type="usernameType" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="primaryYear" type="primaryLevel" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="username" type="usernameType"/>
+            <xs:element name="primaryYear" type="primaryLevel"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="SupervisorType">
         <xs:sequence>
-            <xs:element name="username" type="usernameType" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="password" type="passwordType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="username" type="usernameType"/>
+            <xs:element name="password" type="passwordType"/>
         </xs:sequence>
     </xs:complexType>
 

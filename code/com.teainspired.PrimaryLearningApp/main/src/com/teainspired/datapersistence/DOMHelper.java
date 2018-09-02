@@ -12,9 +12,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 
-public class DOMHelper {
+class DOMHelper {
 
-    public static Document readDocument(File xmlFile) throws IOException, SAXException, ParserConfigurationException {
+    static Document readDocument(File xmlFile) throws IOException, SAXException, ParserConfigurationException {
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = builderFactory.newDocumentBuilder();
         Document doc = builder.parse(xmlFile);
@@ -25,7 +25,7 @@ public class DOMHelper {
     /*
      * returns the value of the first tag of the given element
      */
-    public static String getTagValue(String tag, Element element){
+    static String getTagValue(String tag, Element element){
         String result = null;
 
         NodeList nodeList = element.getElementsByTagName(tag);
@@ -37,7 +37,7 @@ public class DOMHelper {
         return result;
     }
 
-    public static int getTagValueAsInt(String tag, Element element) throws NumberFormatException{
+    static int getTagValueAsInt(String tag, Element element) throws NumberFormatException{
         return Integer.parseInt(getTagValue(tag, element));
     }
 }

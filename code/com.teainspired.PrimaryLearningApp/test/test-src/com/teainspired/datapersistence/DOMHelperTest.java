@@ -6,13 +6,12 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 import java.io.File;
-import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class DOMHelperTest {
 
-    private static final String USER_XML = "C:/Users/Douglas/IdeaProjects/PrimaryLearningApp/code/PrimaryLearningWorkhouse/xml/Users.xml";
+    private static final String USER_XML = DOMHelperTest.class.getResource("/xml/Users.xml").getPath();
 
     @Test
     void readDocumentThrowsException() {
@@ -36,7 +35,7 @@ class DOMHelperTest {
             String tag1 = DOMHelper.getTagValue("bob", element);
             assertNull(tag1, "expected to be null");
             String tag2 = DOMHelper.getTagValue("username", element);
-            assertEquals("Ada", tag2);
+            assertEquals("Wesley", tag2);
         } catch (Exception e) {
             e.printStackTrace();
             fail("Exception thrown");
@@ -56,6 +55,6 @@ class DOMHelperTest {
         assertThrows(NumberFormatException.class, (()-> DOMHelper.getTagValueAsInt("username", element)));
         // test for a valid tag
         int tag1 = DOMHelper.getTagValueAsInt("primaryYear", element);
-        assertEquals(5, tag1);
+        assertEquals(1, tag1);
     }
 }
