@@ -18,9 +18,10 @@ import java.util.Map;
 import static com.teainspired.datapersistence.DOMHelper.readDocument;
 
 public class XMLDOMUserDaoImpl implements UserDAO {
-
+    //TODO refactor to hold document and read from it and update as required.
     private Map<String, Student> studentMap;
     private Map<String, Supervisor> supervisorMap;
+    private Document document;
 
     public XMLDOMUserDaoImpl(String xmlFilePath) {
         studentMap = new HashMap<>();
@@ -56,7 +57,7 @@ public class XMLDOMUserDaoImpl implements UserDAO {
     @Override
     public void removeStudent(Student student) {
         if(student == null){
-            throw new IllegalArgumentException("Student must not be null");
+            throw new IllegalArgumentException("FXStudent must not be null");
         }
         studentMap.remove(student.getUsername());
         //TODO persist change in file
@@ -135,7 +136,7 @@ public class XMLDOMUserDaoImpl implements UserDAO {
         }
     }
     /*
-     * gets the supervisor elemtns from the document then
+     * gets the supervisor elements from the document then
      * puts them in the supervisor map
      */
 

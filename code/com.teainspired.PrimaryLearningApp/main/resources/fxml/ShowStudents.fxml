@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.teainspired.controller.ShowStudentsController">
+    <TableView fx:id="studentTable" prefHeight="200.0" prefWidth="200.0">
+      <columns>
+          <TableColumn fx:id="usernameColumn" editable="false" minWidth="100.0" prefWidth="-1.0" text="Username"/>
+          <TableColumn fx:id="primaryColumn" editable="false" minWidth="100.0" prefWidth="100.0" text="Primary"/>
+      </columns>
+    </TableView>
+    <ButtonBar prefHeight="40.0" prefWidth="200.0">
+      <buttons>
+          <Button fx:id="loginButton" disable="true" mnemonicParsing="false" onAction="#handleLogin" text="Login"/>
+      </buttons>
+    </ButtonBar>
+</VBox>

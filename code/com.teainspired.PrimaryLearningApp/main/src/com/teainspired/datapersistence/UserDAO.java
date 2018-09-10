@@ -6,14 +6,15 @@ import com.teainspired.model.Supervisor;
 import java.util.List;
 
 public interface UserDAO {
+    //TODO add method to return Observable users?
     /*
-     * Method to persist a Student object
-     * @param Student - the Student object to save - must not be null
+     * Method to persist a FXStudent object
+     * @param FXStudent - the FXStudent object to save - must not be null
      */
     void saveStudent(Student student);
 
     /*
-     * Method to retrieve the Student with the given username
+     * Method to retrieve the FXStudent with the given username
      * @param username - the username of the student to retrieve
      * @return returns the student with the given name or throws a NotFoundException
      */

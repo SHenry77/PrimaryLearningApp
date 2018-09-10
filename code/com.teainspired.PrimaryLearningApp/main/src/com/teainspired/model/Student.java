@@ -50,7 +50,7 @@ public class Student implements User, Cloneable {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder("Student -");
+        StringBuilder builder = new StringBuilder("FXStudent -");
         builder.append("Username: ").append(username);
         builder.append(" Primary: ").append(primary);
         return builder.toString();

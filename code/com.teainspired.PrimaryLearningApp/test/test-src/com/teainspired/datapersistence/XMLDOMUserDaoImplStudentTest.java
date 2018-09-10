@@ -38,7 +38,7 @@ class XMLDOMUserDaoImplStudentTest {
 
     @Test
     void saveStudentExceptionCases() {
-        //assert Exception thrown for null Student
+        //assert Exception thrown for null FXStudent
         assertThrows( IllegalArgumentException.class,
                 () -> noUsersDao.saveStudent(null),"student must not be null.");
         //assert Exception thrown for null username
@@ -75,7 +75,7 @@ class XMLDOMUserDaoImplStudentTest {
 
     @Test
     void getStudentExceptionCases() {
-        // assert throws Exception for Null Student
+        // assert throws Exception for Null FXStudent
         assertThrows(IllegalArgumentException.class,
                 ()-> noUsersDao.getStudent(null));
     }
