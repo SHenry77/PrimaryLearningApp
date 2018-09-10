@@ -3,6 +3,7 @@ package com.teainspired.main;
 
 import com.teainspired.controller.RootPaneController;
 import com.teainspired.controller.ShowStudentsController;
+import com.teainspired.controller.SupervisorLoginController;
 import com.teainspired.datapersistence.UserDAO;
 import com.teainspired.datapersistence.XMLDOMUserDaoImpl;
 import com.teainspired.datapersistence.observable.ObservableUserDAO;
@@ -90,9 +91,25 @@ public class PrimaryLearningApp extends Application {
         try {
             gamesView = loader.load();
         } catch (IOException e) {
-            handleLoadException(e, "GamesView");
+            handleLoadException(e, "Games View");
         }
         rootPane.setCenter(gamesView);
+    }
+
+    public void showSupervisorLogin(){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(PrimaryLearningApp.class.getResource("/fxml/SupervisorLogin.fxml"));
+        Node view = null;
+        try {
+            view = loader.load();
+        } catch (IOException e) {
+            handleLoadException(e, "Supervisor Login");
+        }
+        rootPane.setCenter(view);
+
+        SupervisorLoginController controller = loader.getController();
+        controller.setPrimaryLearningApp(this);
+        controller.setUserDAO(observableUserDAO);
     }
 
 
@@ -140,5 +157,9 @@ public class PrimaryLearningApp extends Application {
         super.stop();
         logger.log(Level.INFO, "exiting app");
         System.exit(0);
+    }
+
+    public void setLoggedInSupervisor(FXSupervisor supervisor) {
+        loggedInSupervisor = supervisor;
     }
 }

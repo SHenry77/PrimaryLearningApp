@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<VBox xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teainspired.controller.SupervisorLoginController">
+   <children>
+      <GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" vgap="5.0">
+          <columnConstraints>
+              <ColumnConstraints halignment="RIGHT" maxWidth="107.0" minWidth="10.0" prefWidth="103.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="483.0" minWidth="10.0" prefWidth="482.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+              <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+              <RowConstraints maxHeight="175.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+              <RowConstraints maxHeight="281.0" minHeight="10.0" prefHeight="277.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+          <padding>
+              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+          </padding>
+          <Label text="Username" GridPane.rowIndex="1" />
+          <Label text="Password" GridPane.rowIndex="2" />
+          <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+          <TextField fx:id="username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+          <ButtonBar prefWidth="200.0" styleClass="errorLabel" stylesheets="@css/styles.css" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
+            <buttons>
+                <Button defaultButton="true" mnemonicParsing="false" onAction="#handleLogin" text="Login" />
+            </buttons>
+          </ButtonBar>
+         <Label fx:id="errorLabel" GridPane.columnIndex="1" styleClass="errorLabel"/>
+      </GridPane>
+   </children>
+    <stylesheets>
+        <URL value="@css/styles.css" />
+    </stylesheets>
+</VBox>

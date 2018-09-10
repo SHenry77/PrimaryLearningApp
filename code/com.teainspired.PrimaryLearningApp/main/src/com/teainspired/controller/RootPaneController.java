@@ -4,6 +4,8 @@ import com.teainspired.main.PrimaryLearningApp;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 
+import static java.lang.System.Logger.Level.INFO;
+
 public class RootPaneController {
 
     private System.Logger logger;
@@ -19,8 +21,14 @@ public class RootPaneController {
     }
 
     @FXML
+    private void handleSupervisorLogin(){
+        logger.log(INFO, "handling supervisor login press");
+        primaryLearningApp.showSupervisorLogin();
+    }
+
+    @FXML
     private void handleExit(){
-        logger.log(System.Logger.Level.INFO, "handling exit press");
+        logger.log(INFO, "handling exit press");
         Platform.exit();
     }
 

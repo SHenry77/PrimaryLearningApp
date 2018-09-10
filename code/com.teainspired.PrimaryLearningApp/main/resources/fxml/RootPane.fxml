@@ -9,12 +9,13 @@
            <Menu mnemonicParsing="false" text="File">
                <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit">
                    <accelerator>
-                       <KeyCodeCombination alt="DOWN" code="X" control="UP" meta="UP" shift="UP" shortcut="UP"/>
+                       <KeyCodeCombination alt="DOWN" code="X" control="UP" meta="UP" shift="UP" shortcut="UP" />
                    </accelerator>
                </MenuItem>
            </Menu>
            <Menu mnemonicParsing="false" text="Users">
-               <MenuItem mnemonicParsing="false" onAction="#handleShowStudents" text="Show Students"/>
+               <MenuItem mnemonicParsing="false" onAction="#handleShowStudents" text="Show Students" />
+            <MenuItem mnemonicParsing="false" onAction="#handleSupervisorLogin" text="Supervisor Login" />
            </Menu>
        </MenuBar>
    </top>
